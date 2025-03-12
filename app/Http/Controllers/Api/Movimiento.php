@@ -37,11 +37,9 @@ class Movimiento extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(movimiento $Movement)
+    public function show(Movement $movimiento)
     {
-        
-
-        return response()->json(['movimiento' => $Movement]);
+        return response()->json(['movimientoss' => $movimiento]);
         
     }
     //basicamente ayuda a mostrar un producto en especifico colocando el id del producto en la url
@@ -49,14 +47,14 @@ class Movimiento extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Movement $movimientoUP)
+    public function update(Request $request, Movement $movimiento)
     {
-        $movimientoUP->type =$request->type;
-        $movimientoUP->cantidad =$request->cantidad;
-        $movimientoUP->punto_venta =$request->punto_venta;
-        $movimientoUP->sala_venta=$request->sala_venta;
-        $movimientoUP->save();
-        return response()->json(['MovimientoNUEVO' =>$movimientoUP]);
+        $movimiento->type =$request->type;
+        $movimiento->cantidad =$request->cantidad;
+        $movimiento->punto_venta =$request->punto_venta;
+        $movimiento->sala_venta=$request->sala_venta;
+        $movimiento->save();
+        return response()->json(['MovimientoNUEVO' =>$movimiento]);
     }
 
     /**
